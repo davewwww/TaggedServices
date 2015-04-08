@@ -108,7 +108,7 @@ class TaggedServicesPass implements CompilerPassInterface
      */
     private function getDefinitionsAsArray(ContainerBuilder $container, ServiceConfig $serviceConfig)
     {
-        $services = [];
+        $services = array();
 
         foreach ($this->findServiceIdsByTag($container, $serviceConfig) as $name => $serviceId) {
             $services[$name] = $this->getDefinitionForServiceId($serviceId, $serviceConfig);
@@ -176,7 +176,7 @@ class TaggedServicesPass implements CompilerPassInterface
         if ($serviceConfig->has(ServiceConfig::ARGUMENT)) {
             return (int) $serviceConfig->get(ServiceConfig::ARGUMENT);
         } else {
-            $possible = [];
+            $possible = array();
             $ref = new \ReflectionClass($definition->getClass());
 
             foreach ($ref->getConstructor()->getParameters() as $argumentNr => $argument) {
@@ -207,7 +207,7 @@ class TaggedServicesPass implements CompilerPassInterface
     {
         $tag = $serviceConfig->get(ServiceConfig::FIND_TAG);
 
-        $serviceIds = [];
+        $serviceIds = array();
 
         foreach ($container->findTaggedServiceIds($tag) as $id => $services) {
             foreach ((array) $services as $service) {

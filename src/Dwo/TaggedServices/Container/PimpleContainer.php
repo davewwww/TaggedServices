@@ -16,7 +16,8 @@ class PimpleContainer extends Container implements \IteratorAggregate
      */
     public function getIterator()
     {
-        $values = [];
+        $values = array();
+
         foreach ($this->keys() as $id) {
             $values[$id] = $this[$id];
         }
