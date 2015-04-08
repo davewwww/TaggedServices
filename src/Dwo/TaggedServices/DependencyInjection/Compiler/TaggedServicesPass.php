@@ -127,7 +127,8 @@ class TaggedServicesPass implements CompilerPassInterface
      */
     private function getDefinitionForServiceId($serviceId, ServiceConfig $serviceConfig)
     {
-        if (!$serviceConfig->is(ServiceConfig::LAZY)) {
+
+        if ($serviceConfig->has(ServiceConfig::LAZY) && !$serviceConfig->get(ServiceConfig::LAZY)) {
             return new Reference($serviceId);
         } else {
             return new Definition($this->invokeClass, array(new Reference('service_container'), $serviceId));
@@ -173,6 +174,8 @@ class TaggedServicesPass implements CompilerPassInterface
      */
     private function findArgumentToReplace(Definition $definition, ServiceConfig $serviceConfig)
     {
+        $container = $serviceConfig->is(ServiceConfig::CONTAINER);
+
         if ($serviceConfig->has(ServiceConfig::ARGUMENT)) {
             return (int) $serviceConfig->get(ServiceConfig::ARGUMENT);
         } else {
@@ -180,7 +183,7 @@ class TaggedServicesPass implements CompilerPassInterface
             $ref = new \ReflectionClass($definition->getClass());
 
             foreach ($ref->getConstructor()->getParameters() as $argumentNr => $argument) {
-                if ($argument->isArray()) {
+                if ($argument->isArray() && !$container) {
                     $possible[] = $argumentNr;
                 } else {
                     if ((null !== $class = $argument->getClass()) && $class->isInstance(new $this->containerClass())) {
