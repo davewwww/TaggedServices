@@ -5,10 +5,10 @@ Find and use your tagged services via service configuration instead of building 
 
 ### Installation
 
-Add the CompilerPass to the AppKernel.
+Add the CompilerPass to your AppKernel or a Bundle.
 
 ```php
-AppKernel.php
+#AppKernel.php
 
 protected function buildContainer()
 {
@@ -17,9 +17,21 @@ protected function buildContainer()
 }
 ```
 
-### tag your services
+or to your Bundle
 
-Tag your services with your own tag name as usual and give them an name with the 'type' parameter.
+```php
+#FooBundle.php
+
+protected function build(ContainerBuilder $container)
+{
+    parent::build($container);
+    $container->addCompilerPass(new TaggedServicesPass());
+}
+```
+
+### Tag your services
+
+Tag your services with your own tag as usual and give them an name with the 'type' parameter.
 
 ```yaml
 #services.yml
@@ -36,7 +48,7 @@ services:
       - {name: "my.services", type: "bar"}
 ```
 
-### use your tagged services
+### Use your tagged services
 
 Now add the 'tagged_services' tag with the 'find_tag' parameter to the service that gets injected all tagged services.
 
@@ -51,9 +63,11 @@ services:
       - { name: 'tagged_services', find_tag: 'my.services' }
 ```
 
-Your MyServiceContainer will get a array with your services.
+Now your MyServiceContainer will get a array with all tagged services.
 
 ```php
+#MyServiceContainer.php
+
 class MyServiceContainer {
 
     private $myServices = array();
