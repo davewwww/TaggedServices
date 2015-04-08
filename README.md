@@ -1,9 +1,11 @@
+==============
 TaggedServices
 ==============
 
 Find and use your tagged services via service configuration instead of building compiler passes every time.
 
 ### Installation
+=================
 
 Add the CompilerPass to your AppKernel or a Bundle.
 
@@ -30,6 +32,7 @@ protected function build(ContainerBuilder $container)
 ```
 
 ### Tag your services
+=====================
 
 Tag your services with your own tag as usual and give them an name with the 'type' parameter.
 
@@ -49,6 +52,7 @@ services:
 ```
 
 ### Use your tagged services
+============================
 
 Now add the 'tagged_services' tag with the 'find_tag' parameter to the service that gets injected all tagged services.
 
