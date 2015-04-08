@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/davewwww/TaggedServices/badge.svg)](https://coveralls.io/r/davewwww/TaggedServices)
+
 ==============
 TaggedServices
 ==============
