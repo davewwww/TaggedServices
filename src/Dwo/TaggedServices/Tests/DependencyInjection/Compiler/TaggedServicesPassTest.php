@@ -93,7 +93,8 @@ class TaggedServicesPassTest extends \PHPUnit_Framework_TestCase
         self::assertNotNull('Dwo\TaggedServices\Container\PimpleContainer', $myContainerDefintion->getArgument(0));
         self::assertInstanceOf('Dwo\TaggedServices\Container\PimpleContainer', $myContainer->getServices());
 
-        self::assertInstanceOf('Dwo\TaggedServices\LazyCaller', $myContainer->getServices()['foo']);
+        $services = $myContainer->getServices();
+        self::assertInstanceOf('Dwo\TaggedServices\LazyCaller', $services['foo']);
         self::assertEquals('foo', $myContainer->getServices()['foo']->getContent());
     }
 

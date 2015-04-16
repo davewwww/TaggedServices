@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/davewwww/TaggedServices/badge.svg)](https://coveralls.io/r/davewwww/TaggedServices)
+[![Build Status](https://travis-ci.org/davewwww/TaggedServices.svg?branch=master)](https://travis-ci.org/davewwww/TaggedServices) [![Coverage Status](https://coveralls.io/repos/davewwww/TaggedServices/badge.svg)](https://coveralls.io/r/davewwww/TaggedServices)
 
 ==============
 TaggedServices
