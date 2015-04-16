@@ -95,7 +95,7 @@ class TaggedServicesPassTest extends \PHPUnit_Framework_TestCase
 
         $services = $myContainer->getServices();
         self::assertInstanceOf('Dwo\TaggedServices\LazyCaller', $services['foo']);
-        self::assertEquals('foo', $myContainer->getServices()['foo']->getContent());
+        self::assertEquals('foo', $services['foo']->getContent());
     }
 
     private function buildMyContainer($type)
