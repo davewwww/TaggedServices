@@ -5,7 +5,7 @@ namespace Dwo\TaggedServices\Tests\DependencyInjection\Compiler;
 use Dwo\TaggedServices\DependencyInjection\Compiler\ServiceConfig;
 
 /**
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class ServiceConfigTest extends \PHPUnit_Framework_TestCase
 {

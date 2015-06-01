@@ -7,7 +7,7 @@ use Dwo\TaggedServices\LazyCaller;
 use Dwo\TaggedServices\Tests\Fixtures\MyClass;
 
 /**
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class LazyCallerTest extends \PHPUnit_Framework_TestCase
 {

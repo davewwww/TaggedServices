@@ -5,7 +5,7 @@ namespace Dwo\TaggedServices\Tests;
 use Dwo\TaggedServices\Container\PimpleContainer;
 
 /**
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class PimpleContainerTest extends \PHPUnit_Framework_TestCase
 {

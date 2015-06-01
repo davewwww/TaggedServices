@@ -7,7 +7,7 @@ use Pimple\Container;
 /**
  * Class PimpleContainer
  *
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class PimpleContainer extends Container implements \IteratorAggregate
 {

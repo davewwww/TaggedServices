@@ -5,7 +5,7 @@ namespace Dwo\TaggedServices\DependencyInjection\Compiler;
 /**
  * Class ServiceConfig
  *
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class ServiceConfig
 {
